@@ -35,7 +35,7 @@ Your calendars should now be **sucessfully synced!** You can continue to run you
 2. **Create a Cloud Function:**<br>
 Navigate to [Google Cloud Platform](https://console.cloud.google.com/getting-started?ref=https:%2F%2Fwww.google.com%2F). On the dashboard for your new project, open `Go to APIs Overview`, and click `ENABLE APIS AND SERVICES`. Search for and enable the `Google Build API` and `Google Calendar API`. Next, navigate back to the API & Services home page, and into the `Credentials` tab. In the `Service Accounts` section, there should be an App Engine default service account already created. Copy the email address, go to `Settings and sharing` for the Google Calendar you want synced, and share the calendar with the service account, providing it permission to `Make changes`. <br><br>
 Open the terminal on your computer and navigate to the folder the `main.py` script is located in. Run the following command in your terminal: `gcloud functions deploy main --trigger-http --runtime=python37 --project=INSERT_PROJECT_ID`, replacing `INSERT_PROJECT_ID` with your project's ID. This value should be available in the `Project info` section of your Google Cloud Platform Dashboard.
-When the command runs, it should provide you the option to run *authenticated/allow unauthenticated*... Make sure to `allow unauthenticated`, and the function should take a few minutes to deploy to your Google Cloud Console.
+When the command runs, it should provide you the option to run *authenticated/allow unauthenticated*. Make sure to `allow unauthenticated`, and the function should take a few minutes to deploy to your Google Cloud Console.
 Once it has successfully deployed, you can schedule it to run as often as you'd like!
 
 3. **Schedule Cloud Function as a Cron Job:**
