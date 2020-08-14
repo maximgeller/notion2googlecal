@@ -123,10 +123,7 @@ def main(request):
                     # update events in notion if they were more recently edited in google
                     if last_edited_google > i.last_edited: 
                         i.name = google_event[0]
-                            # print(google_event[6].entryPoints.uri)
-                        if 'entryPoints' in google_event[6]:
-                            print(google_event[6].entryPoints.uri)
-                            # i.link = google_event[6][0]["uri"]
+                           
                         # i.url = google_event[5]
                         # determine if we need date or datetime object for start and end times
                         # we construct a NotionDate object to use
@@ -238,7 +235,7 @@ def main(request):
                 except:
                     # the only way to end up here is by clearing your trash 
                     # (do not do because it eliminates Notion IDs from the usable pool)
-                    #print(f"Please make a new event in notion for {name}, it won't work since you emptied your trash!")
+                    # print(f"Please make a new event in notion for {name}, it won't work since you emptied your trash!")
                     continue
     
     # Get Google Events now to create on Notion Cal
